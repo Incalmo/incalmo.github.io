@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="{{ '/assets/blog.css' | relative_url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
+
 <body>
   <header class="site-header">
     <div class="wrapper">
@@ -22,10 +24,6 @@
       {{ content }}
     </div>
   </main>
-  <footer class="site-footer">
-    <div class="wrapper">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}.</p>
-    </div>
-  </footer>
 </body>
+
 </html>
