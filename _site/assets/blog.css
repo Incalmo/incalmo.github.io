@@ -1,12 +1,12 @@
 :root {
-  color-scheme: dark;
-  --bg: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
-  --fg: #ffffff;
+  color-scheme: light;
+  --bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --fg: #1e293b;
   --accent: #6366f1;
-  --muted: #a0a0a0;
-  --card: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.12);
-  --card-hover: rgba(255, 255, 255, 0.16);
+  --muted: #64748b;
+  --card: rgba(30, 41, 59, 0.08);
+  --border: rgba(30, 41, 59, 0.12);
+  --card-hover: rgba(30, 41, 59, 0.16);
 }
 
 * {
@@ -24,19 +24,6 @@ body {
   position: relative;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: -2;
-}
 
 body::after {
   content: '';
@@ -71,7 +58,7 @@ body::after {
 .page-title {
   font-size: 2.25rem;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #64748b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -134,10 +121,11 @@ body::after {
 
 .post-content pre {
   padding: 1rem;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #f1f5f9;
+  color: #1e293b;
   border-radius: 0.75rem;
   overflow-x: auto;
+  border: 1px solid var(--border);
 }
 
 .post-content code {
