@@ -58,6 +58,7 @@ body {
   padding-top: 70px;
   opacity: .1;
   animation: fadeIn 0.3s ease-in forwards;
+  background: #fafafa;
 }
 
 @keyframes fadeIn {
