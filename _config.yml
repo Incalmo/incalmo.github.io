@@ -1,0 +1,19 @@
+title: incalmo
+description: The next generation of autonomous cybersecurity
+url: https://incalmo.github.io
+baseurl: ''
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+excerpt_separator: "<!--more-->"
+collections:
+  posts:
+    output: true
+defaults:
+  - scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+      author: Incalmo Team
+plugins:
+  - jekyll-feed
