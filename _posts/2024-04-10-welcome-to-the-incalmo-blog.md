@@ -2,6 +2,8 @@
 layout: post
 title: "Welcome to the Incalmo Blog"
 description: "Why we are sharing our journey toward autonomous cybersecurity."
+author: Brian Singer
+date: 2025-05-01
 ---
 We are building Incalmo to deliver autonomous cybersecurity that keeps pace with modern attackers. This blog will be the place where we share what we are learning as we build, ship, and secure AI-driven systems.<!--more-->
 

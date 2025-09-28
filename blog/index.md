@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Blog
+title: Convergence
 permalink: /blog/
-description: Updates, engineering notes, and security research from the Incalmo team.
+description: Safely deploying autonomous cybersecurity systems.
 ---
 <h1 class="page-title">{{ page.title }}</h1>
 <p class="page-lead">{{ page.description }}</p>
@@ -14,7 +14,6 @@ description: Updates, engineering notes, and security research from the Incalmo 
     <a href="{{ post.url | relative_url }}">
       <h2 class="post-card-title">{{ post.title }}</h2>
       <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}{% if post.author %} · {{ post.author }}{% endif %}</p>
-      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
     </a>
   </li>
   {% endfor %}
