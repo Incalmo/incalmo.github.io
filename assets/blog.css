@@ -95,7 +95,7 @@ body::after {
 }
 
 .post-card:hover .post-card-title {
-  color: var(--accent);
+  color: #1e293b;
 }
 
 .post-card a {
@@ -115,7 +115,7 @@ body::after {
   font-weight: 500;
   margin: 0 0 0.25rem;
   line-height: 1.3;
-  color: var(--fg);
+  color: #64748b;
   transition: color 0.2s ease;
 }
 
