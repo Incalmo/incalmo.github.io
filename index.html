@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZWV6MQDLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-EZWV6MQDLN');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#f8fafc">
@@ -146,6 +155,33 @@
             line-height: 1.4;
         }
 
+        .info-section {
+            margin-top: 3rem;
+            text-align: left;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+        }
+
+        .info-section h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .info-section p {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+
+        .info-section p:last-child {
+            margin-bottom: 0;
+        }
+
 
 
 
@@ -192,6 +228,19 @@
             .cta-box p {
                 font-size: 0.85rem;
             }
+
+            .info-section {
+                margin-top: 2rem;
+                padding: 0 1rem;
+            }
+
+            .info-section h2 {
+                font-size: 1.25rem;
+            }
+
+            .info-section p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -226,8 +275,16 @@
 
             <a href="mailto:hello@incalmo.com?subject=Interest%20in%20Autonomous%20Red%20Teaming" class="cta-box">
                 <h3>Autonomous Red Teaming</h3>
-                <p>We design systems to autonomously red team your network.</p>
+                <p>SOTA systems to autonomously red team your network.</p>
             </a>
+        </div>
+
+        <div class="info-section">
+            <p>In the next few years, cybersecurity will dramatically transition from relying on
+                human experts to relying on autonomous systems. In conjunction, society will become
+                increasingly reliant on technology. These confounding factors both raise signficiant saftey risks while
+                creating tremendous opportunities. At Incalmo, we are building the next generation of autonomous
+                cybersecurity systems to ensure that this transition is safe and secure. </p>
         </div>
     </div>
 </body>
