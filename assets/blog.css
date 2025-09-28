@@ -62,15 +62,9 @@ body::after {
   }
 }
 
-.wrapper {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
 /* Header styles are now in shared.css */
 
-.site-main .wrapper {
+.site-main .container {
   padding: 3rem 1.5rem 4rem;
 }
 
