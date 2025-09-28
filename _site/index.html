@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#0f0f23">
     <title>Incalmo</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/shared.css">
     <link rel="icon" type="image/png" href="assets/logo_32.png">
     <style>
         * {
@@ -141,6 +142,7 @@
             }
         }
 
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -170,6 +172,19 @@
 <body>
     <div class="background-grid"></div>
     <div class="glow"></div>
+
+    <header class="site-header">
+        <div class="header-wrapper">
+            <div class="header-brand">
+                <img src="assets/logo_32.png" alt="Incalmo Logo" class="header-logo">
+                <a class="site-title" href="/">incalmo</a>
+            </div>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog</a>
+            </nav>
+        </div>
+    </header>
 
     <div class="container">
         <div class="header">
