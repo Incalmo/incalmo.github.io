@@ -185,6 +185,10 @@
 
 
         @media (max-width: 768px) {
+            body {
+                padding-top: calc(env(safe-area-inset-top) + 3rem);
+            }
+
             .header {
                 flex-direction: column;
                 gap: 0.5rem;
