@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Convergence
+title: Updates & Research
 permalink: /blog/
 description: Safely deploying autonomous cybersecurity systems.
 ---
