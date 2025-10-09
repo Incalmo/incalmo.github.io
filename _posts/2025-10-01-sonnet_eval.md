@@ -1,42 +1,32 @@
 ---
 layout: post
 title: "Frontier Cyber Evaluations: Sonnet 4.5"
-description: '"Claude please hack this network for me"'
+description: '&ldquo;Claude, please hack this network&rdquo;'
 date: 2025-10-01
 author: Brian Singer
 ---
 
-<img src="/assets/sonnet_blog/mural.png" alt="Incalmo Mural" style="max-width: 600px; width: 100%; height: auto; margin: 40px auto; display: block;">
+![Alt text for accessibility]({{ "/assets/sonnet_blog/monet_mural.jpg" | relative_url }}){: .rounded-lg width="400" style="display: block; margin: 3rem auto;" }
 
 
-We're excited to launch Incalmo and share our vision for the future of autonomous cybersecurity.
+At Incalmo, our number one priority is: How well can frontier models hack networks? We view this question as critical to safety, as it informs the risk of AI in relation to cybersecurity harm. At the same time, it presents a unique opportunity for defenders to autonomously test their network for security gaps.
 
-## The Shift Toward Autonomy
+We collaborated with Anthropic to evaluate the hacking capabilities of Sonnet 4.5, their latest model. For context, we have already shown that LLMs with special harnesses can autonomously hack small enterprises (A\ blog post, link to paper). However, what surprised us with Sonnet 4.5 is how well it can hack networks without any special harnesses and only access to a Kali host’s shell.
 
-The cybersecurity landscape is undergoing a fundamental transformation. As AI capabilities advance, we're witnessing the emergence of autonomous systems that can defend networks, identify vulnerabilities, and respond to threats with minimal human intervention. This shift isn't just incremental—it represents a paradigm change in how we approach security.
 
-## The Challenge
+## How to evaluate AI at hacking networks
 
-As organizations become increasingly dependent on technology, the attack surface expands exponentially. Traditional security approaches, which rely heavily on human expertise and manual processes, simply cannot scale to meet these challenges. Meanwhile, adversaries are also leveraging automation and AI to develop more sophisticated attacks.
+Frontier models are often evaluated on security Q&A questions or small security challenges (e.g., exploit a vulnerability, solve a cryptography problem). While these evaluations are important, it's unclear how they translate to LLMs hacking networks. We see this in practice: a great red teamer often hacks networks using completely different strategies than how they may solve a CTF challenge.
 
-This creates a critical gap: we need autonomous defensive systems that are both powerful and safe to deploy in production environments.
+We believe the best way to test if an LLM can hack a network, is by seeing if an LLM can hack a network. In practice, creating realistic networks to hack, i.e., cyber ranges, at scale is a notoriously hard problem. We have been working hard on this problem and have several novel ways to generate cyber ranges at scale (we will talk about this in future blog posts!). As a result, we are able to evaluate Sonnet 4.5 on diverse cyber ranges with 20 to 50 hosts across multiple networks.
 
-## Our Mission
+## Sonnet 4.5 can hack networks with a shell
+Our baseline evaluation is to give Sonnet 4.5 access to a Kali host’s shell. Then we—politely—ask the LLMs to hack a network (one of our cyber ranges). Then, Sonnet 4.5 will begin to execute shell commands, interpret their outputs, and run more commands.
 
-At Incalmo, we're building the infrastructure and tooling necessary to ensure this transition to autonomous cybersecurity happens safely and effectively. Our focus areas include:
+Prior LLM models struggled to hack networks with a shell. For example, Sonnet 4, was only able to hack two of our easiest cyber ranges. However, we found that Sonnet 4.5 was significantly better at using just shells to hack networks. Sonnet 4.5 was more capable and successfully hacked 2 additional cyber ranges than prior models (Figure XX). Additionally, Sonnet 4.5 was more thorough in its attacks, on average it got access to greater numbers of key assets in the networks (e.g., fake SSNs in a database).
 
-**High-Fidelity Cyber Ranges**: State-of-the-art environments for training and evaluating autonomous security systems. These ranges simulate real-world networks and attack scenarios, allowing us to rigorously test autonomous agents before deployment.
 
-**Autonomous Red Teaming**: Advanced systems that can autonomously probe and test network defenses, identifying vulnerabilities before malicious actors can exploit them.
+## The future of autonomous cybersecurity
+While Sonnet 4.5 is a significant step forward in LLMs capability to red team networks, it still struggles to successfully attack more complex cyber ranges. As networks grow in topology complexity, number of hosts, and types of vulnerabilities, LLMs with shells continue to struggle at executing attacks while LLMs with harnesses (such as Incalmo[]link) continue to have much higher efficacy.
 
-## What's Next
-
-Over the coming weeks and months, we'll be sharing insights on:
-- The technical challenges of deploying autonomous security systems
-- Research on evaluating and testing autonomous agents
-- Best practices for safely integrating AI into security operations
-- Updates on our products and capabilities
-
-We're at the beginning of an exciting journey, and we're committed to building solutions that make the autonomous cybersecurity transition both safe and effective.
-
-Stay tuned for more updates, and feel free to reach out at hello@incalmo.com if you'd like to learn more about our work.
+We are continuing to build ever more realistic, larger, and diverse cyber ranges for: evaluating LLMs, generating large amounts of realistic attack data, and designing autonomous cybersecurity systems. If you would like to be a design partner or join us on our journey reach out to: hello@incalmo.ai
