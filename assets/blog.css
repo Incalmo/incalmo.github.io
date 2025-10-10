@@ -38,10 +38,13 @@ body::after {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     opacity: 0.6;
     transform: translate(-50%, -50%) scale(1.1);
@@ -52,6 +55,7 @@ body::after {
 
 .site-main .container {
   padding: 3rem 1.5rem 4rem;
+  max-width: 1000px;
 }
 
 .page-title {
@@ -66,9 +70,30 @@ body::after {
   padding-bottom: 0.1rem;
 }
 
+.post-header .page-title {
+  text-align: center;
+  font-weight: 400;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  color: #1e293b;
+}
+
+.post-header .post-meta {
+  text-align: center;
+}
+
 .page-lead {
   color: var(--muted);
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-header .page-lead {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--muted);
 }
 
 .post-list {
@@ -120,8 +145,8 @@ body::after {
 }
 
 .post-meta {
-  color: var(--muted);
-  font-size: 0.875rem;
+  color: #1e293b;
+  font-size: 1rem;
   margin: 0;
   font-weight: 400;
 }
