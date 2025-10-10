@@ -18,7 +18,7 @@ Incalmo collaborated with Anthropic to develop its "most realistic" way to evalu
 
 Frontier models are often evaluated on security Q&A questions or small security challenges (e.g., exploit a vulnerability, solve a cryptography problem). While these evaluations are important, it's unclear how they translate to LLMs hacking networks. Incalmo has seen this in practice: a great red teamer often hacks networks using completely different strategies than how they may solve a CTF challenge.
 
-Incalmo and Anthropic both believe the best way to test if an LLM can hack a network, is by seeing if an LLM can hack a network. In practice, creating realistic networks to hack, i.e., cyber ranges, at scale is a notoriously hard problem. Incalmo and Anthropic are working hard on this problem together and have several novel ways to generate cyber ranges at scale (will be described in a future blog post!). As a result, Incalmo was able to evaluate Sonnet 4.5 on diverse cyber ranges with 25 to 50 hosts across multiple networks.
+The best way to test if an LLM can hack a network, is by seeing if an LLM can hack a network. In practice, creating realistic networks to hack, i.e., cyber ranges, at scale is a notoriously hard problem. Incalmo is working hard on this problem and have several novel ways to generate cyber ranges at scale (will be described in a future blog post!). As a result, Incalmo was able to evaluate Sonnet 4.5 on diverse cyber ranges with 25 to 50 hosts across multiple networks.
 
 <blockquote style="margin: 2rem 3rem; padding: 1rem 1.5rem; font-style: italic;">
 "Our most realistic evaluations of potential autonomous cyber operation risks are a suite of cyber ranges of 25–50 hosts each."
