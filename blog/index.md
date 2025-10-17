@@ -13,7 +13,7 @@ description: Safely deploying autonomous cybersecurity systems.
   <li class="post-card">
     <a href="{{ post.url | relative_url }}">
       <h2 class="post-card-title">{{ post.title }}</h2>
-      <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}{% if post.author %} · {{ post.author }}{% endif %}</p>
+      <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }}{% if post.author %}. {{ post.author }}{% endif %}</p>
     </a>
   </li>
   {% endfor %}
