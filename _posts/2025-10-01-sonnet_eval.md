@@ -120,13 +120,116 @@ Additionally, Sonnet 4.5 was more thorough in its attacks, on average it got acc
     border-bottom: 2px solid #e5e7eb;
   }
 }
+
+/* Collapsible command blocks */
+.collapsible-wrapper {
+  position: relative;
+}
+
+.collapsible-wrapper pre {
+  border-radius: 4px 4px 0 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.collapsible-wrapper.collapsed pre {
+  max-height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.collapsible-wrapper.collapsed pre::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #1f2937);
+  pointer-events: none;
+}
+
+.toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.toggle-bar:hover {
+  background: #252f3f;
+  color: #e5e7eb;
+}
+
+.toggle-bar svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-wrapper:not(.collapsed) .toggle-bar svg {
+  transform: rotate(180deg);
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all command blocks
+  const commandBlocks = document.querySelectorAll('.step-command pre');
+  
+  commandBlocks.forEach(function(pre) {
+    const code = pre.querySelector('code');
+    if (!code) return;
+    
+    // Count lines in the code block
+    const lines = code.textContent.split('\n').length;
+    
+    // If more than 10 lines, make it collapsible
+    if (lines > 10) {
+      // Wrap the pre in a collapsible container
+      const wrapper = document.createElement('div');
+      wrapper.className = 'collapsible-wrapper collapsed';
+      pre.parentNode.insertBefore(wrapper, pre);
+      wrapper.appendChild(pre);
+      
+      // Create toggle bar
+      const toggleBar = document.createElement('div');
+      toggleBar.className = 'toggle-bar';
+      toggleBar.innerHTML = '<span class="toggle-text">Show full command</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>';
+      wrapper.appendChild(toggleBar);
+      
+      // Add click handler
+      toggleBar.addEventListener('click', function() {
+        wrapper.classList.toggle('collapsed');
+        const text = toggleBar.querySelector('.toggle-text');
+        if (wrapper.classList.contains('collapsed')) {
+          text.textContent = 'Show full command';
+        } else {
+          text.textContent = 'Show less';
+        }
+      });
+    }
+  });
+});
+</script>
 
 ## Sonnet 4.5 hacks differently than humans
 
 Now, lets explore an example of Sonnet 4.5 using a shell to attack a replica of the network from the Equifax data breach. Human red teams commonly use a wide variety of command line tools to execute attacks (e.g., Metasploit, mimikatz, etc). However, interestingly, **Sonnet 4.5 takes a different approach and develops custom exploits directly in bash**.
 
-Sonnet 4.5 iteratively develops an exploit directly in bash, debugging and fixing it on the fly:
+In this example, Sonnet 4.5 has already discovered a vulnerable ApacheStruts web server.
+Now, Sonnet 4.5 iteratively develops an exploit directly in bash, debugging it on the fly:
 
 <div class="attack-step">
   <div class="step-header">
@@ -314,10 +417,10 @@ getInputStream(),#ros)).(#ros.flush())}"
   </div>
 </div>
 
-**Key Observation:** This is a strikingly different approach than how a human would tackle the challenge. A human red teamer would typically use pre-built tools like Metasploit or exploit frameworks. Instead, Sonnet 4.5 crafted custom bash-based exploits, iteratively debugging them until successful — demonstrating strong problem-solving and adaptation capabilities 
+**Takeaway** This is a strikingly different approach than how a human would tackle the challenge. A human red teamer would typically use pre-built exploit frameworks (e.g., Metasploit). Instead, Sonnet 4.5 implemented custom bash exploits, iteratively debugging them until successful.
 
 
 ## The future of autonomous cybersecurity
 While Sonnet 4.5 is a significant step forward in LLMs capability to red team networks, it still struggles to successfully attack more complex cyber ranges. As networks grow in topology complexity, number of hosts, and types of vulnerabilities, LLMs with shells continue to struggle at executing attacks while LLMs with harnesses (such as Incalmo) continue to have much higher efficacy.
 
-We at Incalmo are continuing to build ever more realistic, larger, and diverse cyber ranges for: evaluating LLMs, generating large amounts of realistic attack data, and designing autonomous cybersecurity systems. If you would like to be a design partner or join us on our journey reach out to: [hello@incalmo.ai](mailto:hello@incalmo.ai)
+We at Incalmo are continuing to build ever more realistic, larger, and diverse cyber ranges for: evaluating LLMs, generating large amounts of realistic attack data, and designing autonomous cybersecurity systems. If you would like to become a partner or join us on our journey reach out to: [hello@incalmo.ai](mailto:hello@incalmo.ai)
