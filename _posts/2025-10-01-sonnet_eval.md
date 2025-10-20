@@ -5,6 +5,7 @@ description: ''
 date: 2025-10-01
 author: Brian Singer
 published: true
+thumbnail: /assets/sonnet_blog/monet_mural.png
 ---
 
 ![Alt text for accessibility]({{ "/assets/sonnet_blog/monet_mural.jpg" | relative_url }}){: .rounded-lg style="width: 100%; max-width: 400px; height: auto; display: block; margin: 3rem auto; padding: 0 1rem;" }
